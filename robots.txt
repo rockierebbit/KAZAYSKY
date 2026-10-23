@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /dl/
+Disallow: /free/hugel/download/
+Disallow: /free/rise/download/
+
+Sitemap: https://kazaysky.com/sitemap.xml
