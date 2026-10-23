@@ -235,3 +235,4 @@ section{padding:clamp(44px,6.5vw,84px) 0}
 .circle{padding-block:clamp(48px,7vw,90px)}
 footer{padding:26px 0 34px}
 .hr{opacity:.35}
+.catalog{grid-template-columns:1fr!important}.catalog:not(:has(> :not([hidden]))){display:none}
