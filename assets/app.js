@@ -137,7 +137,14 @@ $$('form[data-form]').forEach(function(f){
       if(f.dataset.next){ location.href = f.dataset.next; return; }
       msg.textContent = 'You're in. Your welcome email is on its way.'; btn.disabled = false; email.value = '';
     };
-    fetch(url, {method:'POST', body:body, mode:'no-cors'}).then(done, done);
+    // CORS request so we can see MailerLite's answer; if it is blocked (privacy extensions), retry blind, then continue anyway.
+    fetch(url, {method:'POST', body:body})
+      .then(function(r){ return r.json(); })
+      .then(function(j){ if(!j || j.success !== true) throw new Error('ml'); done(); })
+      .catch(function(){
+        var b2 = new FormData(); b2.append('fields[email]', email.value); b2.append('ml-submit', '1'); b2.append('anticsrf', 'true');
+        fetch(url, {method:'POST', body:b2, mode:'no-cors'}).then(done, done);
+      });
   });
 });
 
