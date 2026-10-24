@@ -135,7 +135,7 @@ $$('form[data-form]').forEach(function(f){
     var done = function(){
       try{ localStorage.setItem('kz_joined', '1') }catch(_){}
       if(f.dataset.next){ location.href = f.dataset.next; return; }
-      msg.textContent = 'You are in. Check your inbox and confirm.'; btn.disabled = false; email.value = '';
+      msg.textContent = 'You're in. Your welcome email is on its way.'; btn.disabled = false; email.value = '';
     };
     fetch(url, {method:'POST', body:body, mode:'no-cors'}).then(done, done);
   });
