@@ -19,7 +19,7 @@ var CONFIG = {
   release: '2026-10-30T00:00:00+01:00',
   // Paste the links once they are live. Empty = button hidden.
   links: {
-    spotify:    '',
+    spotify:    'https://open.spotify.com/track/0CE114ATvCynCs5HVbDFrh',
     apple:      '',
     beatport:   '',
     youtube:    '',   // official video URL, e.g. https://www.youtube.com/watch?v=...
@@ -27,7 +27,7 @@ var CONFIG = {
     // ---- auto-updating embeds: set once, never touch the site again ----
     freePlaylist:      'https://soundcloud.com/kazaysky/sets/kazaysky-free-download',   // ← paste the SoundCloud "Free Downloads" playlist URL
     soundcloudProfile: 'https://soundcloud.com/kazaysky',
-    spotifyArtist:     ''                                   // ← paste https://open.spotify.com/artist/... after release
+    spotifyArtist:     'https://open.spotify.com/artist/4FdjEW5aGsh9DHA6Gv87x4'                                   // ← paste https://open.spotify.com/artist/... after release
   }
 };
 
