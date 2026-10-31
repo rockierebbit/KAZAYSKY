@@ -236,3 +236,15 @@ section{padding:clamp(44px,6.5vw,84px) 0}
 footer{padding:26px 0 34px}
 .hr{opacity:.35}
 .catalog{grid-template-columns:1fr!important}.catalog:not(:has(> :not([hidden]))){display:none}
+
+/* ---------- free MIDI packs ---------- */
+.packs{margin-top:56px}
+.packs[hidden],.pack[hidden]{display:none}
+.pack-grid{display:grid;gap:20px;margin-top:24px;grid-template-columns:1fr}
+@media(min-width:640px){.pack-grid{grid-template-columns:repeat(3,1fr)}}
+.pack{display:flex;flex-direction:column;gap:8px;text-decoration:none;border:1px solid var(--line);background:var(--bg-2);padding:14px;transition:border-color .2s}
+.pack:hover{border-color:var(--amber)}
+.pack img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.pack-t{font:600 17px/1.3 var(--sans);margin-top:6px}
+.pack-m{font-size:13px;color:var(--muted)}
+.pack .btn{margin-top:6px;min-height:44px}

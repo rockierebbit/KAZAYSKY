@@ -27,7 +27,11 @@ var CONFIG = {
     // ---- auto-updating embeds: set once, never touch the site again ----
     freePlaylist:      'https://soundcloud.com/kazaysky/sets/kazaysky-free-download',   // ← paste the SoundCloud "Free Downloads" playlist URL
     soundcloudProfile: 'https://soundcloud.com/kazaysky',
-    spotifyArtist:     'https://open.spotify.com/artist/4FdjEW5aGsh9DHA6Gv87x4'                                   // ← paste https://open.spotify.com/artist/... after release
+    spotifyArtist:     'https://open.spotify.com/artist/4FdjEW5aGsh9DHA6Gv87x4',  // ← paste https://open.spotify.com/artist/... after release
+    // ---- free sample packs (Gumroad). Empty = pack hidden; all empty = whole block hidden ----
+    midiTrance:      'https://kazaysky.gumroad.com/l/kazaysky-trance',   // ← Gumroad link: KAZAYSKY - Trance Vol. 1
+    midiTechno:      'https://kazaysky.gumroad.com/l/kazaysky-melodic-techno',   // ← Gumroad link: KAZAYSKY - Melodic Techno Vol. 1
+    midiProgressive: 'https://kazaysky.gumroad.com/l/kazaysky-progressive-house'    // ← Gumroad link: KAZAYSKY - Progressive House Vol. 1
   }
 };
 
@@ -155,6 +159,8 @@ $$('iframe[data-sc]').forEach(function(f){
   f.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(u) + '&color=%23ffb224&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false';
 });
 $$('[data-href]').forEach(function(a){ var u = CONFIG.links[a.dataset.href]; if(u) a.href = u; });
+/* free MIDI packs: show only the ones that have a link */
+$$('[data-pack]').forEach(function(a){ var u = CONFIG.links[a.dataset.pack]; if(!u) return; a.href = u; a.hidden = false; var w = a.closest('[data-packs]'); if(w) w.hidden = false; });
 $$('iframe[data-sp]').forEach(function(f){
   var u = CONFIG.links[f.dataset.sp]; var m = u && u.match(/artist\/([A-Za-z0-9]+)/); if(!m) return;
   f.src = 'https://open.spotify.com/embed/artist/' + m[1] + '?utm_source=generator&theme=0';
