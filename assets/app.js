@@ -28,10 +28,10 @@ var CONFIG = {
     freePlaylist:      'https://soundcloud.com/kazaysky/sets/kazaysky-free-download',   // ← paste the SoundCloud "Free Downloads" playlist URL
     soundcloudProfile: 'https://soundcloud.com/kazaysky',
     spotifyArtist:     '',                                  // ← paste https://open.spotify.com/artist/... after release
-    // ---- free MIDI packs (Gumroad). Empty = pack hidden; all empty = whole block hidden ----
-    midiTrance:      '',   // ← Gumroad link: KAZAYSKY - Trance MIDI Vol. 1
-    midiTechno:      '',   // ← Gumroad link: KAZAYSKY - Melodic Techno MIDI Vol. 1
-    midiProgressive: ''    // ← Gumroad link: KAZAYSKY - Progressive House MIDI Vol. 1
+    // ---- free sample packs (Gumroad). Empty = pack hidden; all empty = whole block hidden ----
+    midiTrance:      '',   // ← Gumroad link: KAZAYSKY - Trance Vol. 1
+    midiTechno:      '',   // ← Gumroad link: KAZAYSKY - Melodic Techno Vol. 1
+    midiProgressive: ''    // ← Gumroad link: KAZAYSKY - Progressive House Vol. 1
   }
 };
 
