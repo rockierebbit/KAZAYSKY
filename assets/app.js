@@ -29,9 +29,9 @@ var CONFIG = {
     soundcloudProfile: 'https://soundcloud.com/kazaysky',
     spotifyArtist:     '',                                  // ← paste https://open.spotify.com/artist/... after release
     // ---- free sample packs (Gumroad). Empty = pack hidden; all empty = whole block hidden ----
-    midiTrance:      '',   // ← Gumroad link: KAZAYSKY - Trance Vol. 1
-    midiTechno:      '',   // ← Gumroad link: KAZAYSKY - Melodic Techno Vol. 1
-    midiProgressive: ''    // ← Gumroad link: KAZAYSKY - Progressive House Vol. 1
+    midiTrance:      'https://kazaysky.gumroad.com/l/kazaysky-trance',   // ← Gumroad link: KAZAYSKY - Trance Vol. 1
+    midiTechno:      'https://kazaysky.gumroad.com/l/kazaysky-melodic-techno',   // ← Gumroad link: KAZAYSKY - Melodic Techno Vol. 1
+    midiProgressive: 'https://kazaysky.gumroad.com/l/kazaysky-progressive-house'    // ← Gumroad link: KAZAYSKY - Progressive House Vol. 1
   }
 };
 
