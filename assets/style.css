@@ -248,3 +248,12 @@ footer{padding:26px 0 34px}
 .pack-t{font:600 17px/1.3 var(--sans);margin-top:6px}
 .pack-m{font-size:13px;color:var(--muted)}
 .pack .btn{margin-top:6px;min-height:44px}
+
+/* ---------- official video: watch buttons + lightbox ---------- */
+.btn .play{width:11px;height:13px;fill:currentColor;margin-left:-4px}
+.vmodal{position:fixed;inset:0;z-index:100;background:rgba(5,5,5,.92);display:flex;align-items:center;justify-content:center;padding:clamp(12px,4vw,48px)}
+.vmodal[hidden]{display:none}
+.vframe{width:min(1200px,100%);aspect-ratio:16/9;background:#000;box-shadow:0 0 80px rgba(255,178,36,.18)}
+.vframe iframe{width:100%;height:100%;border:0;display:block}
+.vclose{position:absolute;top:12px;right:16px;width:48px;height:48px;border:0;background:none;color:var(--text);font:300 40px/1 var(--sans);cursor:pointer}
+.vclose:hover{color:var(--amber)}

@@ -22,7 +22,7 @@ var CONFIG = {
     spotify:    'https://open.spotify.com/track/0CE114ATvCynCs5HVbDFrh',
     apple:      '',
     beatport:   '',
-    youtube:    '',   // official video URL, e.g. https://www.youtube.com/watch?v=...
+    youtube:    'https://www.youtube.com/watch?v=6_IP7Ck1d2U',   // official video URL (Solar Flare video), e.g. https://www.youtube.com/watch?v=...  -> shows the 'Watch the video' buttons + player
     soundcloud: 'https://soundcloud.com/kazaysky/solarflare',
     // ---- auto-updating embeds: set once, never touch the site again ----
     freePlaylist:      'https://soundcloud.com/kazaysky/sets/kazaysky-free-download',   // ← paste the SoundCloud "Free Downloads" playlist URL
@@ -61,6 +61,28 @@ if(hv){
     hv.muted = true; var p = hv.play(); if(p && p.catch) p.catch(function(){});
   }
 }
+
+/* official video: "Watch" buttons open the YouTube player in a lightbox */
+(function(){
+  var u = CONFIG.links.youtube || '';
+  var m = u.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})/);
+  var btns = $$('[data-watch]');
+  if(!m){ btns.forEach(function(b){ b.hidden = true; }); return; }
+  var id = m[1], modal = $('#vmodal'), frame = modal && $('.vframe', modal);
+  function close(){ if(!modal) return; modal.hidden = true; frame.innerHTML = ''; document.body.style.overflow=''; }
+  function open(e){
+    if(!modal) return; e.preventDefault();
+    frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1" title="KAZAYSKY - Solar Flare (Official Video)" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    modal.hidden = false; document.body.style.overflow='hidden';
+    var hv = $('#hero-video'); if(hv) hv.pause();
+  }
+  btns.forEach(function(b){ b.href = 'https://www.youtube.com/watch?v='+id; b.hidden = false; b.addEventListener('click', open); });
+  if(modal){
+    $('.vclose', modal).addEventListener('click', close);
+    modal.addEventListener('click', function(e){ if(e.target === modal) close(); });
+    addEventListener('keydown', function(e){ if(e.key === 'Escape' && !modal.hidden) close(); });
+  }
+})();
 
 /* release block */
 var T = Date.parse(CONFIG.release);

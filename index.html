@@ -16,7 +16,7 @@
 <link rel="icon" href="/assets/k-sun.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=4">
+<link rel="stylesheet" href="/assets/style.css?v=5">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"KAZAYSKY","alternateName":"KΛZΛYSKY","url":"https://kazaysky.com","genre":["Melodic techno","Cinematic techno","Melodic trance","Progressive trance","Techno"],"description":"DJ, producer and vocalist from Warsaw making cinematic melodic techno and trance.","foundingLocation":"Warsaw, Poland","email":"booking@kazaysky.com","sameAs":["https://open.spotify.com/artist/4FdjEW5aGsh9DHA6Gv87x4","https://soundcloud.com/kazaysky","https://www.instagram.com/kazaysky.official/","https://www.tiktok.com/@kazaysky.official","https://www.youtube.com/@KAZAYSKY","https://www.facebook.com/profile.php?id=61591977324511","https://x.com/kazaysky"]}</script>
 </head>
 <body>
@@ -45,7 +45,8 @@
     <p class="tag">Darkness the light comes up from.</p>
     <p class="role">DJ · Producer · Vocalist — Warsaw</p>
     <div class="btn-row">
-      <a class="btn btn-amber" href="#music">Listen — Solar Flare</a>
+      <a class="btn btn-amber" data-watch hidden href="https://www.youtube.com/@KAZAYSKY" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z"/></svg>Watch the video</a>
+      <a class="btn btn-ghost" href="#music">Listen — Solar Flare</a>
       <a class="btn btn-ghost" href="/free/">Free downloads</a>
     </div>
   </div>
@@ -90,8 +91,9 @@
     <div class="rv">
       <p class="kicker">Film</p>
       <h2>Hood up.<br>Volume up.</h2>
-      <p class="body">Short cinematic films from the studio and the full Solar Flare video, shot vertical, made to be watched on the phone in your hand.</p>
+      <p class="body">Solar Flare is episode 1 of an animated KΛZΛYSKY series: hand-drawn, cinematic, set in Warsaw. Every new single is a new episode. Plus short films straight from the studio.</p>
       <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn-amber" data-watch hidden href="https://www.youtube.com/@KAZAYSKY" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z"/></svg>Watch the official video</a>
         <a class="btn btn-ghost" href="https://www.youtube.com/@KAZAYSKY" target="_blank" rel="noopener">YouTube</a>
         <a class="btn btn-ghost" href="https://www.tiktok.com/@kazaysky.official" target="_blank" rel="noopener">TikTok</a>
         <a class="btn btn-ghost" href="https://www.instagram.com/kazaysky.official/" target="_blank" rel="noopener">Instagram</a>
@@ -222,6 +224,10 @@
 </footer>
 
 <div class="lightbox" role="dialog" aria-label="Photo"><img alt=""><button aria-label="Close">×</button></div>
-<script src="/assets/app.js?v=7"></script>
+<div class="vmodal" id="vmodal" hidden role="dialog" aria-modal="true" aria-label="KAZAYSKY - Solar Flare (Official Video)">
+  <button class="vclose" aria-label="Close video">&times;</button>
+  <div class="vframe"></div>
+</div>
+<script src="/assets/app.js?v=8"></script>
 </body>
 </html>
