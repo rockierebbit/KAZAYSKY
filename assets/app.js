@@ -72,7 +72,7 @@ if(hv){
   function close(){ if(!modal) return; modal.hidden = true; frame.innerHTML = ''; document.body.style.overflow=''; }
   function open(e){
     if(!modal) return; e.preventDefault();
-    frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1" title="KAZAYSKY - Solar Flare (Official Video)" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    frame.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1&origin='+encodeURIComponent(location.origin)+'" title="KAZAYSKY - Solar Flare (Official Video)" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
     modal.hidden = false; document.body.style.overflow='hidden';
     var hv = $('#hero-video'); if(hv) hv.pause();
   }
