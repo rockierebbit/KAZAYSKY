@@ -12,7 +12,8 @@ var CONFIG = {
     forms: {
       newsletter: '200069415304169321',
       hugel:      '200069415304169321',
-      rise:       '200069415304169321'
+      rise:       '200069415304169321',
+      lmtd:       '200069415304169321'   // LIKE ME TO DEATH 001 — replace with the id of the new "LMTD 001" form
     }
   },
   // Solar Flare release moment (Warsaw time). Before it: countdown. After it: streaming buttons.
@@ -157,10 +158,14 @@ $$('form[data-form]').forEach(function(f){
     var id = CONFIG.mailerlite.forms[f.dataset.form] || CONFIG.mailerlite.forms.newsletter;
     var url = 'https://assets.mailerlite.com/jsonp/' + CONFIG.mailerlite.account + '/forms/' + id + '/subscribe';
     var body = new FormData(); body.append('fields[email]', email.value); body.append('ml-submit', '1'); body.append('anticsrf', 'true');
+    // extra answers: <input data-ml="field_key"> (checked radios / text) -> fields[field_key]
+    $$('[data-ml]', f).forEach(function(i){ if((i.type === 'radio' || i.type === 'checkbox') && !i.checked) return; if(i.value) body.append('fields[' + i.dataset.ml + ']', i.value); });
     var btn = $('button', f); btn.disabled = true; msg.textContent = 'One moment…';
     var done = function(){
       try{ localStorage.setItem('kz_joined', '1') }catch(_){}
+      if(window.fbq) try{ window.fbq('track', 'Lead', {content_name: f.dataset.form}); }catch(_){}
       if(f.dataset.next){ location.href = f.dataset.next; return; }
+      if(f.dataset.done){ msg.textContent = f.dataset.done; btn.disabled = false; email.value = ''; return; }
       msg.textContent = "You're in. Your welcome email is on its way."; btn.disabled = false; email.value = '';
     };
     // CORS request so we can see MailerLite's answer; if it is blocked (privacy extensions), retry blind, then continue anyway.
