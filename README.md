@@ -1,6 +1,6 @@
 # kazaysky.com
 
-Official site of KΛZΛYSKY — cinematic melodic techno & trance, Warsaw.
+Official site of KΛZΛYSKY — techno with a voice, Warsaw.
 Static site, deployed automatically by Netlify from the `main` branch (no build step, publish directory `.`).
 
 ## Edit once, update forever
